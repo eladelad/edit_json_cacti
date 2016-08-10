@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  h1= title
+  div.container
+    div#url-test.alert
+    p Wow
+    div(data-role='controlgroup').form-group
+        form#jsonform
+                div.input-group.input-group-lg
+                    input(type='submit',value='Submit',data-transition='fade', data-theme='c').btn.btn-primary.btn-lg#checkUrlBtn.form-control
+                    span.input-group-addon Name
+                    input(id='name',type='text',value='',placeholder='Graph Name',name='name',onfocus='this.select();').form-control
+                    span.input-group-addon ID
+                    input(id='local_graph_id',type='text',value='',placeholder='Graph ID',name='local_graph_id',onfocus='this.select();').form-control
+                    span.input-group-addon Width
+                    input(id='graph_width',type='text',value='',placeholder='Width',name='graph_width',onfocus='this.select();').form-control
+                    span.input-group-addon Width
+                    input(id='graph_height',type='text',value='',placeholder='Height',name='graph_height',onfocus='this.select();').form-control
+
+
+        -each graph, key in graphs
+            form#jsonform
+                div.input-group.input-group-lg
+                    input(type='submit',value='Submit',data-transition='fade', data-theme='c').btn.btn-primary.btn-lg#checkUrlBtn.form-control
+                    span.input-group-addon Name
+                    input(id='name',type='text',value='#{key}',placeholder='#{key}',name='name',onfocus='this.select();').form-control
+                    span.input-group-addon ID
+                    input(id='local_graph_id',type='text',value='#{graph.local_graph_id}',placeholder='#{graph.local_graph_id}',name='local_graph_id',onfocus='this.select();').form-control
+                    span.input-group-addon Width
+                    - if (graph.graph_width)
+                        input(id='graph_width',type='text',value='#{graph.graph_width}',placeholder='#{graph.graph_width}',name='graph_width',onfocus='this.select();').form-control
+                    - else
+                        input(id='graph_width',type='text',value='',placeholder='Width',name='graph_width',onfocus='this.select();').form-control
+                    span.input-group-addon Width
+                    - if (graph.graph_height)
+                        input(id='graph_height',type='text',value='#{graph.graph_height}',placeholder='#{graph.graph_height}',name='graph_height',onfocus='this.select();').form-control
+                    - else
+                        input(id='graph_height',type='text',value='',placeholder='Height',name='graph_height',onfocus='this.select();').form-control
+
+

@@ -1,0 +1,17 @@
+{
+  "graphs": {
+    "hot": {
+      "graph_width": 1000,
+      "graph_height": 125,
+      "graph_nolegend": "",
+      "local_graph_id": 70033,
+      "rra_id": 0
+    },
+    "bezeq": {
+      "local_graph_id": 25096
+    },
+    "cnr": {
+      "local_graph_id": 11523
+    }
+  }
+}
